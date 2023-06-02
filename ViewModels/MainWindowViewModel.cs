@@ -21,8 +21,6 @@ namespace Bank.ViewModels
         {
             bankRepository = new BankRepository(clientsDataFile);
 
-           
-
             AllClients = System.Windows.Data.CollectionViewSource.GetDefaultView(ViewClientsData(BankRepository));
 
             employeesTypeOptions = new string[2] { "Консультант", "Менеджер"};
@@ -30,6 +28,7 @@ namespace Bank.ViewModels
             employeeType = employeesTypeOptions[0]; // по умолчанию
 
             Consultant = new Consultant(BankRepository);
+            //Consultant
             Consultant.OnEditClient += OnEditClient;
 
             Manager = new Manager(BankRepository);
@@ -64,14 +63,14 @@ namespace Bank.ViewModels
         { 
             get => consultant;
 
-            set => Set(ref consultant, value);
+            private set => Set(ref consultant, value);
         }
 
         public Manager Manager
         {
             get => manager;
 
-            set => Set(ref manager, value);
+            private set => Set(ref manager, value);
         }
         
         public BankRepository BankRepository { get { return bankRepository; } }
