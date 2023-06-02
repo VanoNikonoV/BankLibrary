@@ -3,3 +3,5 @@ https://docs.fluentvalidation.net/en/latest/
 https://habr.com/ru/companies/otus/articles/472604/
 https://www.youtube.com/watch?v=Zh1ccvTFzs8
 https://russianblogs.com/article/3939605903/
+
+Исключения https://habr.com/ru/articles/231585/

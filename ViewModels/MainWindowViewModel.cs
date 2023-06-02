@@ -290,7 +290,8 @@ namespace Bank.ViewModels
         /// </summary>
         private void SaveRepo()
         {
-            var saveDlg = new SaveFileDialog { Filter = "Text files|*.json" , InitialDirectory = Directory.GetCurrentDirectory()};
+            var saveDlg = new SaveFileDialog { Filter = "Text files|*.json", 
+                                               InitialDirectory = Directory.GetCurrentDirectory() };
 
             if (true == saveDlg.ShowDialog())
             {

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using Microsoft.Win32;
 
 namespace BankLibrary.DataAccesses
 {
@@ -52,6 +53,20 @@ namespace BankLibrary.DataAccesses
                 }
                 else
                 {
+                    //var saveDlg = new OpenFileDialog()
+                    //{
+                    //    Filter = "Text files|*.json",
+                    //    InitialDirectory = Directory.GetCurrentDirectory()
+                    //};
+
+                    //if (true == saveDlg.ShowDialog())
+                    //{
+                    //    string fileName = saveDlg.FileName;
+
+                    //    string json = JsonConvert.SerializeObject(BankRepository, Formatting.Indented);
+
+                    //    File.WriteAllText(fileName, json);
+
                     File.Create(path).Close();
                 }
             }
