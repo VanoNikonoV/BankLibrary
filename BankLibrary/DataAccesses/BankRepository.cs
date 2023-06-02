@@ -3,9 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.IO;
-using System.Windows;
 
 namespace BankLibrary.DataAccesses
 {
@@ -78,13 +76,13 @@ namespace BankLibrary.DataAccesses
         {
             get => logClient ?? (logClient = new ObservableCollection<InformationAboutChanges>());
 
-            set
-            {
-                if (this.logClient == value) return;
+            //private set
+            //{
+            //    if (this.logClient == value) return;
 
-                this.logClient = value;
+            //    this.logClient = value;
                 
-            }
+            //}
         }
 
         #region Автогенерация данных

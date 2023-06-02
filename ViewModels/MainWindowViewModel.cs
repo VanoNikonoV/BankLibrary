@@ -1,18 +1,17 @@
-﻿using Bank.DataAccesses;
-using Bank.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
-using Bank.Cmds;
 using Bank.View;
 using System.Windows;
 using Microsoft.Win32;
 using Newtonsoft.Json;
 using System.IO;
 using Microsoft.Toolkit.Uwp.Notifications;
-using BankLibrary;
+using BankLibrary.DataAccesses;
+using BankLibrary.Models;
+using BankLibrary.Commands;
 
 namespace Bank.ViewModels
 {
@@ -20,9 +19,9 @@ namespace Bank.ViewModels
     {
         public MainWindowViewModel(string clientsDataFile)
         {
-          
-            
             bankRepository = new BankRepository(clientsDataFile);
+
+           
 
             AllClients = System.Windows.Data.CollectionViewSource.GetDefaultView(ViewClientsData(BankRepository));
 

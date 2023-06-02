@@ -1,6 +1,6 @@
-﻿using Bank.Commands;
+﻿
 using System;
-using System.Windows.Input;
+
 
 namespace Bank.ViewModels
 {

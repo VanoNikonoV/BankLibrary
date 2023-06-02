@@ -8,7 +8,7 @@ namespace BankLibrary.Validators
     /// <summary>
     /// Выполняет проверку вводимых данных о клиенте
     /// </summary>
-    internal class ClientValidator:AbstractValidator<Client>
+    public class ClientValidator:AbstractValidator<Client>
     {
         public ClientValidator()
         {

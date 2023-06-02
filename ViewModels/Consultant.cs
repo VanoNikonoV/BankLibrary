@@ -1,8 +1,9 @@
-﻿using Bank.Commands;
-using Bank.DataAccesses;
-using Bank.Interfases;
-using Bank.Models;
-using Bank.Validators;
+﻿using BankLibrary;
+using BankLibrary.Commands;
+using BankLibrary.DataAccesses;
+using BankLibrary.Interfases;
+using BankLibrary.Models;
+using BankLibrary.Validators;
 using FluentValidation;
 using System;
 using System.Collections.Generic;
@@ -369,8 +370,7 @@ namespace Bank.ViewModels
                              caption: "Ощибка в данных",
                              MessageBoxButton.OK,
                              icon: MessageBoxImage.Error);
-
-            //MWindow.ViewModel.ShowStatusBarText("Выберите клиента");
+ 
         }
 
         /// <summary>

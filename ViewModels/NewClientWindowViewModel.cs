@@ -1,6 +1,6 @@
-﻿using Bank.Commands;
-using Bank.Models;
-using Bank.Validators;
+﻿using BankLibrary.Commands;
+using BankLibrary.Models;
+using BankLibrary.Validators;
 using System.Windows;
 
 namespace Bank.ViewModels

@@ -1,19 +1,10 @@
 ﻿using Bank.View;
 using Bank.ViewModels;
-using Microsoft.Toolkit.Uwp.Notifications;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Markup;
-using Windows.Foundation.Collections;
-using Windows.System;
 
 namespace Bank
 {

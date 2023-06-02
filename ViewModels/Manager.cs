@@ -1,6 +1,7 @@
-﻿using Bank.Commands;
-using Bank.DataAccesses;
-using Bank.Models;
+﻿
+using BankLibrary.Commands;
+using BankLibrary.DataAccesses;
+using BankLibrary.Models;
 using System;
 using System.Media;
 

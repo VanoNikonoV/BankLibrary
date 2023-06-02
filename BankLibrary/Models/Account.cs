@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using BankLibrary.Interfases;
 
-namespace BankLibrary
+namespace BankLibrary.Models
 {
     //https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/tutorials/oop
     /* abstract Could not create an instance of type Bank.Models.Account. 
