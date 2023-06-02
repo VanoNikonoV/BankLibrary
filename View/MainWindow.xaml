@@ -1,0 +1,307 @@
+﻿<Window x:Class="Bank.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Bank"
+        xmlns:view="clr-namespace:Bank.View"
+        xmlns:vm="clr-namespace:Bank.ViewModels" 
+        mc:Ignorable="d"
+        Height="850" Width="1250" WindowStyle="None" 
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <DataTemplate DataType="{x:Type vm:Consultant}">
+            <view:ConsultantUserControl/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:Manager}">
+            <view:ManagerUserControl/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="CheckBox_Changed">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <CheckBox IsChecked="{Binding Path=Owner.IsChanged, 
+                    UpdateSourceTrigger=PropertyChanged}" 
+                          IsEnabled="False"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="InfoChages">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+
+                <TextBlock
+                        Text="{Binding StringFormat=Кто внес изменения: {0}, Path=WhoChangedIt}"
+                        FontSize="14" 
+                        FontWeight="Bold">
+                </TextBlock>
+
+                <TextBlock
+                        Text="{Binding StringFormat=Измения: {0},Path=Note}" TextWrapping="Wrap"
+                        FontSize="14" 
+                        Foreground="Red" FontWeight="Bold">
+                </TextBlock>
+
+                <TextBlock
+                        Text="{Binding DateChenges}"
+                        FontSize="10" 
+                        FontWeight="Bold"
+                        HorizontalAlignment="Right">
+                </TextBlock>
+
+            </StackPanel>
+
+        </DataTemplate>
+
+        <DrawingBrush x:Key="MyGridBrushResource" Opacity="0.25"
+             Viewport="0,0,10,10" ViewportUnits="Absolute" TileMode="Tile">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <DrawingGroup.Children>
+                        <GeometryDrawing Geometry="M0,0 L1,0 1,1 0,1z" Brush="White" />
+                        <GeometryDrawing Brush="#9999FF">
+                            <GeometryDrawing.Geometry>
+                                <GeometryGroup>
+                                    <RectangleGeometry Rect="0,0,1,0.1" />
+                                    <RectangleGeometry Rect="0,0.1,0.1,0.9" />
+                                </GeometryGroup>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingGroup.Children>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)"
+                                           Storyboard.TargetName="СhangesClient">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="310"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)"
+                                           Storyboard.TargetName="СhangesClient">
+                <EasingDoubleKeyFrame KeyTime="0" Value="310"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </Window.Resources>
+
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding SaveRepoCommand}"/>
+    </Window.InputBindings>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid ShowGridLines="False"  
+          MouseDown="Grid_MouseDown" 
+          MouseLeftButtonDown="Gride_MouseLeftButtonDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270"/>
+            <ColumnDefinition MinWidth="200"/>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+
+        <ListView   x:Name="DataClients"
+                    ItemsSource="{Binding AllClients, Mode=OneWay}" 
+                    FontSize="18" Cursor="IBeam"
+                    IsSynchronizedWithCurrentItem="True"
+                    SelectedItem="{Binding CurrentClient, UpdateSourceTrigger=PropertyChanged}"
+                    Grid.Column="1" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" 
+                                        DisplayMemberBinding="{Binding Owner.ID}"/>
+                    <GridViewColumn Header="Имя" 
+                                        DisplayMemberBinding="{Binding Owner.FirstName}"/>
+                    <GridViewColumn Header="Отчество" 
+                                        DisplayMemberBinding="{Binding Owner.MiddleName}"/>
+                    <GridViewColumn Header="Фамилия" 
+                                        DisplayMemberBinding="{Binding Owner.SecondName}"/>
+                    <GridViewColumn Header="Паспортные данные"  Width ="240"
+                                        DisplayMemberBinding="{Binding Owner.SeriesAndPassportNumber}"/>
+                    <GridViewColumn Header="Телефон"
+                                        DisplayMemberBinding="{Binding Owner.Telefon}"/>
+                    <GridViewColumn Header="Дата и время" 
+                                        DisplayMemberBinding="{Binding Owner.DateOfEntry, StringFormat=g}"/>
+                    <GridViewColumn Header="Изм." 
+                                        CellTemplate="{StaticResource CheckBox_Changed}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
+        <ContentControl Grid.Column="0" Grid.Row="1"
+                        Content="{Binding Workspaces}"/>
+
+
+        <!--Список изменений-->
+        <Label x:Name="ListChanges_Label" 
+               Grid.Row="1" Grid.Column="3" 
+               Content="Список изменений" 
+               VerticalAlignment="Center" 
+               HorizontalAlignment="Center" 
+               FontSize="18">
+            <Label.LayoutTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.LayoutTransform>
+        </Label>
+
+        <Grid x:Name="СhangesGride" Grid.Row="1" 
+              Grid.Column="3" Grid.ColumnSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="ButtonCloseMenu" Height="60" Width="60" 
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}" VerticalAlignment="Top" 
+                                HorizontalAlignment="Left"
+                                Visibility="Collapsed"
+                                Click="ButtonCloseMenu_Click">
+                    <materialDesign:PackIcon Kind="ArrowRight" 
+                                                     Foreground="#FF133B86" 
+                                                     Height="25" Width="25"/>
+                </Button>
+                <Button x:Name="ButtonOpenMenu" Height="60" Width="60" 
+                                Background="{x:Null}"
+                                BorderBrush="{x:Null}" VerticalAlignment="Top" 
+                                HorizontalAlignment="Right"
+                                Click="ButtonOpenMenu_Click">
+                    <materialDesign:PackIcon Kind="FlipHorizontal" 
+                                                     Foreground="#FF133B86" 
+                                                     Height="25" Width="25"/>
+                </Button>
+
+            </StackPanel>
+            <ListBox x:Name="СhangesClient" 
+                Background="{StaticResource MyGridBrushResource}"
+                Margin="0,60,0,10"
+                ItemTemplate="{StaticResource InfoChages}"
+                ItemsSource="{Binding BankRepository.LogClient, UpdateSourceTrigger=PropertyChanged}" 
+                HorizontalAlignment="Stretch"
+                Width="{Binding ColumnDefinitions/ActualWidth, ElementName=СhangesGride, Mode=OneWay}"/>
+        </Grid>
+
+        <StatusBar Grid.Row="3" Grid.ColumnSpan="3" Background="#FF679CC9">
+            <StatusBarItem>
+                <materialDesign:PackIcon Kind="Lightbulb" Width="30" 
+                                             Height="20" Margin="5 0 0 5"
+                                             HorizontalAlignment="Center"/>
+            </StatusBarItem>
+
+            <Separator/>
+
+            <StatusBarItem>
+                <TextBlock x:Name="StatusBarText"
+                           FontSize="14" TextWrapping="NoWrap"
+                           Margin="5 0 0 5" Foreground="#FFE72A2A"/>
+            </StatusBarItem>
+        </StatusBar>
+        
+         <!--Верхняя инструментальная панель-->
+        <Grid Grid.Row="0" Grid.ColumnSpan="4" Background="#FF679CC9">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="/Images/A_logo.png" 
+                   HorizontalAlignment="Left" 
+                   Width="40" Height="40" 
+                   VerticalAlignment="Stretch"/>
+
+            <Button Grid.Column="1"
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Right" 
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    IsCancel="True"
+                    Click="CloseWindows">
+                <materialDesign:PackIcon Kind="Close" Width="30" 
+                                         Height="30" 
+                                         VerticalAlignment="Center" Foreground="#FFB73A86"/>
+            </Button>
+
+            <StackPanel x:Name="Command" Grid.Column="1"
+                        HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" 
+                        Orientation="Horizontal"
+                        Margin="20 0">
+
+                <Button x:Name="Save_Button" ToolTip="Coхранить данные"
+                Background="{x:Null}" BorderBrush="{x:Null}"
+                Cursor="Hand" HorizontalAlignment="Left"
+                Command="{Binding SaveRepoCommand}">
+
+                    <materialDesign:PackIcon Kind="Floppy" 
+                                     Width="25" Height="25" HorizontalAlignment="Center" 
+                                     Cursor="Hand" Foreground="#DD080808"/>
+                </Button>
+
+                <Button x:Name="NewClient_Button" ToolTip="Добавить нового клиента"
+                        Background="{x:Null}" BorderBrush="{x:Null}"
+                        Cursor="Hand" HorizontalAlignment="Left"
+                        Command="{Binding NewClientAddCommand}">
+                    <materialDesign:PackIcon Kind="PlusBox" 
+                                     Width="25" Height="25" HorizontalAlignment="Center" 
+                                     Cursor="Hand" Foreground="#DD080808"/>
+                </Button>
+
+                <Button ToolTip="Coртировать по алфавиту"
+                        Background="{x:Null}" BorderBrush="{x:Null}"
+                        Cursor="Hand" HorizontalAlignment="Left" 
+                        Command="{Binding SortCommand}">
+                    <materialDesign:PackIcon Kind="SortAlphabeticalDescending" 
+                                     Width="25" Height="25" HorizontalAlignment="Center" 
+                                     Cursor="Hand" Foreground="#DD080808"/>
+                </Button>
+
+                <Button x:Name="DelitClient_Button" ToolTip="Удалить клиента"
+                Background="{x:Null}" BorderBrush="{x:Null}"
+                Cursor="Hand" HorizontalAlignment="Left" 
+                Command="{Binding DeleteClientCommand}">
+
+                    <materialDesign:PackIcon Kind="Delete" 
+                                     Width="25" Height="25" HorizontalAlignment="Center" 
+                                     Cursor="Hand" Foreground="#DD080808"/>
+                </Button>
+
+            </StackPanel>
+
+            <ComboBox x:Name="AccessLevel_ComboBox"
+                      Grid.Column="0"
+                      HorizontalAlignment="Right" 
+                      FontSize="20"
+                      VerticalAlignment="Center" 
+                      SelectedItem="{Binding EmployeeType}"
+                      ItemsSource="{Binding EmployeesTypeOptions}"/>
+
+
+        </Grid>
+
+    </Grid>
+</Window>

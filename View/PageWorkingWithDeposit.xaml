@@ -1,0 +1,258 @@
+﻿<Page x:Class="Bank.View.PageWorkingWithDeposit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Bank.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="230">
+    <Page.Resources>
+        <DataTemplate x:Key="Temp">
+            <StackPanel>
+                <TextBlock Text="{Binding Owner.FirstName}"></TextBlock>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <StackPanel  Orientation="Vertical" 
+                 HorizontalAlignment="Center" Cursor="Hand" 
+                 Background="#FFFEFEFE" >
+
+        <Grid Margin="0 10 0 0" Cursor="No">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Имя" FontSize="18" 
+                       Grid.Column="0" Grid.Row="0"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Bottom" 
+                       FontWeight="Bold" Cursor="No" />
+            <TextBox Text="{Binding Path=Owner.FirstName, Mode=OneWay,
+                     UpdateSourceTrigger=PropertyChanged}"
+                     FontSize="18" Width="195"     
+                     Grid.Column="0" Grid.Row="1"
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center"
+                     IsReadOnly="True" Cursor="No"/>
+        </Grid>
+
+        <Grid  Cursor="No">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Отчество" FontSize="18" 
+                       Grid.Column="0" Grid.Row="0"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Bottom" FontWeight="Bold"/>
+            <TextBox FontSize="18" Width="195"
+                     Text="{Binding Path=Owner.MiddleName}"
+                     Grid.Column="0" Grid.Row="1"
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center" 
+                     Cursor="Arrow"
+                     IsReadOnly="True"/>
+        </Grid>
+
+        <Grid  Cursor="No">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Фамилия" FontSize="18" 
+                       Grid.Column="0" Grid.Row="0"
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Bottom" FontWeight="Bold"/>
+            <TextBox  FontSize="18" Width="195"
+                      Text="{Binding Path=DataContext.Owner.SecondName, Mode=OneWay,
+                      RelativeSource={RelativeSource AncestorType={x:Type Page}, 
+                      Mode=FindAncestor}, 
+                      UpdateSourceTrigger=PropertyChanged}"
+                      Grid.Column="0" Grid.Row="1"
+                      HorizontalAlignment="Center" 
+                      VerticalAlignment="Center"
+                      IsReadOnly="True"/>
+        </Grid>
+
+        <Grid x:Name ="DepositInfo" Uid="Deposit">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                    Text="На депозитном счёте:" FontSize="14" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom" FontWeight="Bold" Margin="30,0,0,0"/>
+
+            <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"
+                    FontSize="16" Width="195" Cursor="No"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    
+                    IsReadOnly="True"
+                    Text="{Binding Path=DataContext.Deposit.Balance, 
+                    StringFormat=C,ConverterCulture=ru-RU,Mode=OneWay,
+                    FallbackValue=счет не открыт,
+                    RelativeSource={RelativeSource AncestorType={x:Type Page}, 
+                    Mode=FindAncestor}, 
+                    UpdateSourceTrigger=PropertyChanged}" 
+                     FlowDirection="RightToLeft" Margin="15,0,0,0"/>
+
+            <TextBox x:Name="SumAddDeposit_TextBox" 
+                     Grid.Row="2" Grid.Column="0" 
+                     FontSize="16" Width="80" 
+                     HorizontalAlignment="Left" 
+                     VerticalAlignment="Center" 
+                     FlowDirection="RightToLeft" 
+                     Margin="15,0,0,0" Cursor="Hand" 
+                     GotFocus="FocusDeposit_TextBox"/>
+
+            <Button Grid.Row="2" Grid.Column="1"
+
+                    Cursor="Hand"
+                    Background="Black"
+                    ToolTip="Пополнить депозитный счет"
+                    BorderBrush="{x:Null}" Margin="0,4,0,4">
+                <materialDesign:PackIcon Kind="BankTransferIn" Width="25" 
+                                             Height="25" 
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"/>
+            </Button>
+
+            <Button  HorizontalAlignment="Center"
+                Grid.Column="3" Grid.Row="2"
+                Background="Black" BorderBrush="{x:Null}"
+                Cursor="Hand" 
+                
+                FontWeight="Bold"
+                CommandParameter="{Binding Uid, ElementName=DepositInfo}"
+                ToolTip="Перевод между счетами или другому клиенту">
+
+                <materialDesign:PackIcon Kind="BankTransfer" Width="25" 
+                                         Height="25" 
+                                         HorizontalAlignment="Center"/>
+            </Button>
+
+        </Grid>
+
+        <Grid x:Name ="NoDepositInfo" Uid="NoDeposit">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="51.8"/>
+                <ColumnDefinition Width="8.2"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="На недепозитном счёте:" FontSize="14"
+                   Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Bottom" FontWeight="Bold" Margin="27,0,0,0"/>
+
+            <TextBox FontSize="16" Width="195" Cursor="No"
+                    Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    IsReadOnly="True"
+                    Text="{Binding Path=DataContext.NoDeposit.Balance, 
+                    StringFormat=C,ConverterCulture=ru-RU,Mode=OneWay,
+                    FallbackValue=счет не открыт,
+                    RelativeSource={RelativeSource AncestorType={x:Type Page}, 
+                    Mode=FindAncestor}, 
+                    UpdateSourceTrigger=PropertyChanged}" 
+                    Margin="20,0,0,0" FlowDirection="RightToLeft"/>
+
+            <TextBox x:Name="SumAddNoDeposit_TextBox"  
+                     Grid.Row="2" Grid.Column="0" 
+                     FontSize="16" Width="80"
+                     HorizontalAlignment="Left" 
+                     VerticalAlignment="Center" 
+                     FlowDirection="RightToLeft"
+                     Margin="18,0,0,0"
+                     GotFocus="FocusNoDeposit_TextBox"/>
+
+            <Button Grid.Row="2" Grid.Column="1" 
+                   
+                    Cursor="Hand"
+                    Background="Black"
+                    ToolTip="Пополнить недепозитный счет"
+                    BorderBrush="{x:Null}" Margin="0,4,0,4">
+                <materialDesign:PackIcon Kind="BankTransferIn" Width="25" 
+                                             Height="25" 
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"/>
+            </Button>
+
+            <Button  HorizontalAlignment="Left"
+                Grid.Column="2" Grid.Row="2"
+                Background="Black" BorderBrush="{x:Null}"
+                Cursor="Hand" 
+                
+                ToolTip="Перевод между счетами или другому клиенту" Grid.ColumnSpan="2" Margin="2,4,0,4">
+
+                <materialDesign:PackIcon Kind="BankTransfer" Width="25" 
+                                         Height="25" 
+                                         HorizontalAlignment="Center"/>
+            </Button>
+
+        </Grid>
+        <TextBlock Text="Выберите клиента для перевода:" FontSize="18" 
+                   TextWrapping="Wrap" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"/>
+
+        <ListView x:Name="List_SortRepository"
+            ScrollViewer.VerticalScrollBarVisibility="Visible"
+            ScrollViewer.CanContentScroll="True"
+            Width="190"
+            IsSynchronizedWithCurrentItem="False" 
+            MinHeight="180" MaxHeight="230"    
+            SelectionChanged="SelectedRecipient">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Owner.FirstName}"/>
+                        <TextBlock Text="{Binding Owner.MiddleName}"/>
+                        <TextBlock Text="{Binding Owner.SecondName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Content="Отсортируйте получателей:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" />
+        <ComboBox Name="ConditionsForListAccounts" Height="30"
+                  Width="180" FontSize="14"
+                  SelectionChanged="ChangingSelectionListAccounts" 
+                  HorizontalAlignment="Center" IsReadOnly="True">
+            <ComboBoxItem Content="Депозитные счета"/>
+            <ComboBoxItem Content="Недепозитные счета"/>
+            <ComboBoxItem Content="Себе на другой счет"/>
+        </ComboBox>
+
+    </StackPanel>
+</Page>

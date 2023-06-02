@@ -1,0 +1,952 @@
+[
+  {
+    "Owner": {
+      "FirstName": "Крестина",
+      "MiddleName": "Васильевна",
+      "SecondName": "Соловьёва",
+      "Telefon": "79020000004",
+      "ID": 1,
+      "SeriesAndPassportNumber": "6650565853",
+      "DateOfEntry": "2023-03-20T20:51:20.3913215+05:00"
+    },
+    "Deposit": {
+      "Number": "0",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "1",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Татьяна",
+      "MiddleName": "Дмитриевна",
+      "SecondName": "Виноградова",
+      "Telefon": "79020000001",
+      "ID": 2,
+      "SeriesAndPassportNumber": "6650566021",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "2",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "3",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Мария",
+      "MiddleName": "Васильевна",
+      "SecondName": "Коновалова",
+      "Telefon": "79020000003",
+      "ID": 3,
+      "SeriesAndPassportNumber": "6650566284",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "4",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "5",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Мария",
+      "MiddleName": "Ивановна",
+      "SecondName": "Ершова",
+      "Telefon": "79020000006",
+      "ID": 4,
+      "SeriesAndPassportNumber": "6650566576",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "6",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "7",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агнес",
+      "MiddleName": "Сергеевна",
+      "SecondName": "Карпова",
+      "Telefon": "79020000010",
+      "ID": 5,
+      "SeriesAndPassportNumber": "6650566868",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "8",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "9",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Анжела",
+      "MiddleName": "Владимировна",
+      "SecondName": "Попова",
+      "Telefon": "79020000015",
+      "ID": 6,
+      "SeriesAndPassportNumber": "6650567305",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "10",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "11",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Людмила",
+      "MiddleName": "Васильевна",
+      "SecondName": "Цветкова",
+      "Telefon": "79020000021",
+      "ID": 7,
+      "SeriesAndPassportNumber": "6650567385",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "12",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "13",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Крестина",
+      "MiddleName": "Владимировна",
+      "SecondName": "Дьячкова",
+      "Telefon": "79020000028",
+      "ID": 8,
+      "SeriesAndPassportNumber": "6650567536",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "14",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "15",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Людмила",
+      "MiddleName": "Александровна",
+      "SecondName": "Козлова",
+      "Telefon": "79020000036",
+      "ID": 9,
+      "SeriesAndPassportNumber": "6650567750",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "16",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "17",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агата",
+      "MiddleName": "Васильевна",
+      "SecondName": "Карпова",
+      "Telefon": "79020000045",
+      "ID": 10,
+      "SeriesAndPassportNumber": "6650567847",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "18",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "19",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Аделина",
+      "MiddleName": "Петровна",
+      "SecondName": "Карпова",
+      "Telefon": "79020000055",
+      "ID": 11,
+      "SeriesAndPassportNumber": "6650567866",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "20",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "21",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Жанна",
+      "MiddleName": "Александровна",
+      "SecondName": "Ершова",
+      "Telefon": "79020000066",
+      "ID": 12,
+      "SeriesAndPassportNumber": "6650568232",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "22",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "23",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агата",
+      "MiddleName": "Тимофеевна",
+      "SecondName": "Виноградова",
+      "Telefon": "79020000078",
+      "ID": 13,
+      "SeriesAndPassportNumber": "6650568274",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "24",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "25",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Людмила",
+      "MiddleName": "Петровна",
+      "SecondName": "Лебедева",
+      "Telefon": "79020000091",
+      "ID": 14,
+      "SeriesAndPassportNumber": "6650568485",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "26",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "27",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агата",
+      "MiddleName": "Дмитриевна",
+      "SecondName": "Ковалёва",
+      "Telefon": "79020000105",
+      "ID": 15,
+      "SeriesAndPassportNumber": "6650568874",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "28",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "29",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Татьяна",
+      "MiddleName": "Дмитриевна",
+      "SecondName": "Ковалёва",
+      "Telefon": "79020000120",
+      "ID": 16,
+      "SeriesAndPassportNumber": "6650569316",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "30",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "31",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Ольга",
+      "MiddleName": "Ивановна",
+      "SecondName": "Иванова",
+      "Telefon": "79020000136",
+      "ID": 17,
+      "SeriesAndPassportNumber": "6650569672",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "32",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "33",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агнес",
+      "MiddleName": "Васильевна",
+      "SecondName": "Васильева",
+      "Telefon": "79020000153",
+      "ID": 18,
+      "SeriesAndPassportNumber": "6650569791",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "34",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "35",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агата",
+      "MiddleName": "Тимофеевна",
+      "SecondName": "Зайцева",
+      "Telefon": "79020000171",
+      "ID": 19,
+      "SeriesAndPassportNumber": "6650570016",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "36",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "37",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Мария",
+      "MiddleName": "Петровна",
+      "SecondName": "Ершова",
+      "Telefon": "79020000190",
+      "ID": 20,
+      "SeriesAndPassportNumber": "6650570164",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "38",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "39",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Аделина",
+      "MiddleName": "Ивановна",
+      "SecondName": "Цветкова",
+      "Telefon": "79020000210",
+      "ID": 21,
+      "SeriesAndPassportNumber": "6650570636",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "40",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "41",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Вероника",
+      "MiddleName": "Тимофеевна",
+      "SecondName": "Карпова",
+      "Telefon": "79020000231",
+      "ID": 22,
+      "SeriesAndPassportNumber": "6650571032",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "42",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "43",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Маргарита",
+      "MiddleName": "Васильевна",
+      "SecondName": "Козлова",
+      "Telefon": "79020000253",
+      "ID": 23,
+      "SeriesAndPassportNumber": "6650571348",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "44",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "45",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агата",
+      "MiddleName": "Александровна",
+      "SecondName": "Ершова",
+      "Telefon": "79020000276",
+      "ID": 24,
+      "SeriesAndPassportNumber": "6650571528",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "46",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "47",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Ольга",
+      "MiddleName": "Ивановна",
+      "SecondName": "Васильева",
+      "Telefon": "79020000300",
+      "ID": 25,
+      "SeriesAndPassportNumber": "6650571755",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "48",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "49",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Людмила",
+      "MiddleName": "Александровна",
+      "SecondName": "Васильева",
+      "Telefon": "79020000325",
+      "ID": 26,
+      "SeriesAndPassportNumber": "6650572170",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "50",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "51",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агнес",
+      "MiddleName": "Александровна",
+      "SecondName": "Пономарёва",
+      "Telefon": "79020000351",
+      "ID": 27,
+      "SeriesAndPassportNumber": "6650572464",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "52",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "53",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Ольга",
+      "MiddleName": "Владимировна",
+      "SecondName": "Пономарёва",
+      "Telefon": "79020000378",
+      "ID": 28,
+      "SeriesAndPassportNumber": "6650572503",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "54",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "55",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Жанна",
+      "MiddleName": "Ивановна",
+      "SecondName": "Цветкова",
+      "Telefon": "79020000406",
+      "ID": 29,
+      "SeriesAndPassportNumber": "6650572690",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "56",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "57",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Вероника",
+      "MiddleName": "Владимировна",
+      "SecondName": "Щукина",
+      "Telefon": "79020000435",
+      "ID": 30,
+      "SeriesAndPassportNumber": "6650573077",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "58",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "59",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агата",
+      "MiddleName": "Тимофеевна",
+      "SecondName": "Щукина",
+      "Telefon": "79020000465",
+      "ID": 31,
+      "SeriesAndPassportNumber": "6650573198",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "60",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "61",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агнес",
+      "MiddleName": "Ивановна",
+      "SecondName": "Васильева",
+      "Telefon": "79020000496",
+      "ID": 32,
+      "SeriesAndPassportNumber": "6650573319",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "62",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "63",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Татьяна",
+      "MiddleName": "Сергеевна",
+      "SecondName": "Соловьёва",
+      "Telefon": "79020000528",
+      "ID": 33,
+      "SeriesAndPassportNumber": "6650573703",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "64",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "65",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Людмила",
+      "MiddleName": "Владимировна",
+      "SecondName": "Ковалёва",
+      "Telefon": "79020000561",
+      "ID": 34,
+      "SeriesAndPassportNumber": "6650574084",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "66",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "67",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Вероника",
+      "MiddleName": "Васильевна",
+      "SecondName": "Ковалёва",
+      "Telefon": "79020000595",
+      "ID": 35,
+      "SeriesAndPassportNumber": "6650574502",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "68",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "69",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Аделина",
+      "MiddleName": "Александровна",
+      "SecondName": "Пономарёва",
+      "Telefon": "79020000630",
+      "ID": 36,
+      "SeriesAndPassportNumber": "6650574872",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "70",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "71",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агата",
+      "MiddleName": "Дмитриевна",
+      "SecondName": "Ковалёва",
+      "Telefon": "79020000666",
+      "ID": 37,
+      "SeriesAndPassportNumber": "6650574897",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "72",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "73",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Татьяна",
+      "MiddleName": "Ивановна",
+      "SecondName": "Попова",
+      "Telefon": "79020000703",
+      "ID": 38,
+      "SeriesAndPassportNumber": "6650575379",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "74",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "75",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Людмила",
+      "MiddleName": "Тимофеевна",
+      "SecondName": "Дьячкова",
+      "Telefon": "79020000741",
+      "ID": 39,
+      "SeriesAndPassportNumber": "6650575811",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "76",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "77",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Татьяна",
+      "MiddleName": "Тимофеевна",
+      "SecondName": "Щукина",
+      "Telefon": "79020000780",
+      "ID": 40,
+      "SeriesAndPassportNumber": "6650576014",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "78",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "79",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Анжела",
+      "MiddleName": "Васильевна",
+      "SecondName": "Козлова",
+      "Telefon": "79020000820",
+      "ID": 41,
+      "SeriesAndPassportNumber": "6650576114",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "80",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "81",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Жанна",
+      "MiddleName": "Ивановна",
+      "SecondName": "Калинина",
+      "Telefon": "79020000861",
+      "ID": 42,
+      "SeriesAndPassportNumber": "6650576373",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "82",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "83",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Анжела",
+      "MiddleName": "Васильевна",
+      "SecondName": "Цветкова",
+      "Telefon": "79020000903",
+      "ID": 43,
+      "SeriesAndPassportNumber": "6650576390",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "84",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "85",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Маргарита",
+      "MiddleName": "Александровна",
+      "SecondName": "Дьячкова",
+      "Telefon": "79020000946",
+      "ID": 44,
+      "SeriesAndPassportNumber": "6650576644",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "86",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "87",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Татьяна",
+      "MiddleName": "Владимировна",
+      "SecondName": "Ковалёва",
+      "Telefon": "79020000990",
+      "ID": 45,
+      "SeriesAndPassportNumber": "6650576758",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "88",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "89",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агнес",
+      "MiddleName": "Александровна",
+      "SecondName": "Соколова",
+      "Telefon": "79020001035",
+      "ID": 46,
+      "SeriesAndPassportNumber": "6650577061",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "90",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "91",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Агнес",
+      "MiddleName": "Сергеевна",
+      "SecondName": "Пономарёва",
+      "Telefon": "79020001081",
+      "ID": 47,
+      "SeriesAndPassportNumber": "6650577318",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "92",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "93",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Вероника",
+      "MiddleName": "Дмитриевна",
+      "SecondName": "Кузнецова",
+      "Telefon": "79020001128",
+      "ID": 48,
+      "SeriesAndPassportNumber": "6650577421",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "94",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "95",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Татьяна",
+      "MiddleName": "Сергеевна",
+      "SecondName": "Щукина",
+      "Telefon": "79020001176",
+      "ID": 49,
+      "SeriesAndPassportNumber": "6650577592",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "96",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "97",
+      "Balance": 200.0
+    }
+  },
+  {
+    "Owner": {
+      "FirstName": "Татьяна",
+      "MiddleName": "Владимировна",
+      "SecondName": "Ковалёва",
+      "Telefon": "79020001225",
+      "ID": 50,
+      "SeriesAndPassportNumber": "6650577617",
+      "DateOfEntry": "2023-03-20T20:51:20.394314+05:00"
+    },
+    "Deposit": {
+      "Number": "98",
+      "Balance": 100.0
+    },
+    "NoDeposit": {
+      "Number": "99",
+      "Balance": 200.0
+    }
+  }
+]
