@@ -41,6 +41,8 @@ namespace Bank.ViewModels
         #region Поля
         private readonly string[] employeesTypeOptions;
 
+        readonly string PATH = Directory.GetCurrentDirectory() + @"\Data\Log.json";
+
         private string employeeType;
 
         private BankRepository bankRepository;
@@ -304,7 +306,12 @@ namespace Bank.ViewModels
 
                     AllClients.Refresh();
                 }
+
             }
+
+            string json2 = JsonConvert.SerializeObject(BankRepository.LogClient, Formatting.Indented);
+
+            File.WriteAllText(PATH, json2);
         }
 
         #region Закрытие модели?
