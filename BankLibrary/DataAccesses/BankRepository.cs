@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using Microsoft.Win32;
+using System.Windows;
 
 namespace BankLibrary.DataAccesses
 {
@@ -70,6 +71,11 @@ namespace BankLibrary.DataAccesses
                     File.Create(path).Close();
                 }
             }
+            catch(FileNotFoundException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);

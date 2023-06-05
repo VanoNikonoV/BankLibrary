@@ -155,6 +155,7 @@ namespace BankLibrary.Models
                 if (telefon == value) return;
            
                 this.telefon = value;
+
                 OnPropertyChanged(nameof(Telefon));
             }
         }

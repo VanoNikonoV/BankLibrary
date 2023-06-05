@@ -115,7 +115,7 @@
                 <Grid Width="400" VerticalAlignment="Top" 
                       RenderTransformOrigin="0.503,0.641" 
                       Margin="0,72,0,0"
-                      DataContext="{Binding NewClient}">
+                      DataContext="{Binding NewClient}" Cursor="Arrow">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
@@ -128,8 +128,8 @@
                                  GotFocus="TextBox_GotFocus"
                                  SelectionChanged="TextBox_SelectionChanged"
                                  Text="{Binding Path=Telefon, 
-                                 UpdateSourceTrigger=PropertyChanged, 
-                                 Mode=TwoWay, 
+                                 UpdateSourceTrigger=LostFocus, 
+                                 Mode=TwoWay,
                                  ValidatesOnDataErrors=True}">
                         </TextBox>
                     </StackPanel>

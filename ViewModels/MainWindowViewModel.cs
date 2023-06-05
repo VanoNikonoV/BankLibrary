@@ -307,7 +307,6 @@ namespace Bank.ViewModels
 
                     AllClients.Refresh();
                 }
-
             }
 
             string json2 = JsonConvert.SerializeObject(BankRepository.LogClient, Formatting.Indented);
