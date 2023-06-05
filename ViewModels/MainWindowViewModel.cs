@@ -414,5 +414,25 @@ namespace Bank.ViewModels
 
             else return "нет данных";
         }
+
+        //private void ShowStatusBarText(string message)
+        //{
+        //    StatusBarText.Text = message;
+
+        //    var timer = new System.Timers.Timer();
+
+        //    timer.Interval = 2000;
+
+        //    timer.Elapsed += delegate (object sender, System.Timers.ElapsedEventArgs e)
+        //    {
+        //        timer.Stop();
+        //        //удалите текст сообщения о состоянии с помощью диспетчера, поскольку таймер работает в другом потоке
+        //        this.Dispatcher.BeginInvoke(new Action(() =>
+        //        {
+        //            StatusBarText.Text = "";
+        //        }));
+        //    };
+        //    timer.Start();
+        //}
     }
 }

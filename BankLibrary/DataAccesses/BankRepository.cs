@@ -26,66 +26,86 @@ namespace BankLibrary.DataAccesses
         /// <param name="path">Путь к файлу</param>
         private void LoadData(string path)
         {
-            try
+            if (File.Exists(path))
             {
-                if (File.Exists(path))
+                string json = File.ReadAllText(path);
+
+                List<BankClient<Account>> temp = JsonConvert.DeserializeObject<List<BankClient<Account>>>(json);
+
+                foreach (BankClient<Account> client in temp)
+                {   // вызывается коструктор Клиента для интерации статического свойства ID
+
+                    BankClient<Account> tempClient = new BankClient<Account>
+                                    (new Client(firstName: client.Owner.FirstName,
+                                                middleName: client.Owner.MiddleName,
+                                                secondName: client.Owner.SecondName,
+                                                    telefon: client.Owner.Telefon,
+                                    seriesAndPassportNumber: client.Owner.SeriesAndPassportNumber,
+                                                    dateTime: client.Owner.DateOfEntry));
+
+                    tempClient.AddAccount(AccountType.Deposit, client.Deposit.Balance);
+
+                    tempClient.AddAccount(AccountType.NoDeposit, client.NoDeposit.Balance);
+
+                    this.Add(tempClient);
+                }
+            }
+            else
+            {
+                string message = "Выберите файл с данными?";
+
+                MessageBoxResult result = MessageBox.Show(message, caption: "Сбой загрузки данных", MessageBoxButton.YesNo, MessageBoxImage.Error);
+
+                if (result == MessageBoxResult.Yes)
                 {
-                    string json = File.ReadAllText(path);
+                    var openDlg = new OpenFileDialog()
+                    {
+                        Filter = "Text files|*.json",
+                        InitialDirectory = Directory.GetCurrentDirectory()
+                    };
 
-                    List<BankClient<Account>> temp = JsonConvert.DeserializeObject<List<BankClient<Account>>>(json);
+                    if (true == openDlg.ShowDialog())
+                    {
+                        string fileName = openDlg.FileName;
 
-                    foreach (BankClient<Account> client in temp)
-                    {   // вызывается коструктор Клиента для интерации статического свойства ID
+                       
+                            string json = File.ReadAllText(fileName);
 
-                        BankClient<Account> tempClient = new BankClient<Account>
-                                        (new Client(firstName: client.Owner.FirstName,
-                                                   middleName: client.Owner.MiddleName,
-                                                   secondName: client.Owner.SecondName,
-                                                      telefon: client.Owner.Telefon,
-                                      seriesAndPassportNumber: client.Owner.SeriesAndPassportNumber,
-                                                     dateTime: client.Owner.DateOfEntry));
+                            List<BankClient<Account>> temp = JsonConvert.DeserializeObject<List<BankClient<Account>>>(json);
 
-                        tempClient.AddAccount(AccountType.Deposit, client.Deposit.Balance);
+                            if (temp != null)
+                            {
+                                foreach (BankClient<Account> client in temp) //NullReferenceException
+                                {
+                                    BankClient<Account> tempClient = new BankClient<Account>
+                                                    (new Client(firstName: client.Owner.FirstName,
+                                                                middleName: client.Owner.MiddleName,
+                                                                secondName: client.Owner.SecondName,
+                                                                    telefon: client.Owner.Telefon,
+                                                    seriesAndPassportNumber: client.Owner.SeriesAndPassportNumber,
+                                                                    dateTime: client.Owner.DateOfEntry));
 
-                        tempClient.AddAccount(AccountType.NoDeposit, client.NoDeposit.Balance);
+                                    tempClient.AddAccount(AccountType.Deposit, client.Deposit.Balance);
 
-                        this.Add(tempClient);
+                                    tempClient.AddAccount(AccountType.NoDeposit, client.NoDeposit.Balance);
+
+                                    this.Add(tempClient);
+                                }
+                            }
+                            else
+                            {
+                                path = Environment.CurrentDirectory + @"\Data\Default.json";
+
+                                File.Create(path).Close();
+
+                                MessageBox.Show("Создан файл Default.json\n" + path, caption: "Не удалось открыть файл", 
+                                    MessageBoxButton.OK, MessageBoxImage.Information);
+                            }
+     
                     }
                 }
-                else
-                {
-                    //var saveDlg = new OpenFileDialog()
-                    //{
-                    //    Filter = "Text files|*.json",
-                    //    InitialDirectory = Directory.GetCurrentDirectory()
-                    //};
-
-                    //if (true == saveDlg.ShowDialog())
-                    //{
-                    //    string fileName = saveDlg.FileName;
-
-                    //    string json = JsonConvert.SerializeObject(BankRepository, Formatting.Indented);
-
-                    //    File.WriteAllText(fileName, json);
-
-                    File.Create(path).Close();
-                }
-            }
-            catch(FileNotFoundException ex)
-            {
-                MessageBox.Show(ex.Message);
             }
 
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                path = Environment.CurrentDirectory + @"\Data\Default.json";
-                File.Create(path).Close();
-            }
-            
         }
 
         private ObservableCollection<InformationAboutChanges> logClient;

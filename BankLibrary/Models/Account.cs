@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using BankLibrary.Interfases;
+﻿using System.ComponentModel;
 
 namespace BankLibrary.Models
 {
-    //https://learn.microsoft.com/ru-ru/dotnet/csharp/fundamentals/tutorials/oop
-    /* abstract Could not create an instance of type Bank.Models.Account. 
-    * Type is an interface or abstract class and cannot be instantiated.
-    * Path '[0].Deposit.Number', line 13, position 15."
-    */
-
+    /// <summary>
+    /// Базовый класс счета
+    /// </summary>
     public class Account : INotifyPropertyChanged  
     {
         /// <summary>
@@ -49,8 +43,6 @@ namespace BankLibrary.Models
             accountNumberSeed++;
 
             Balance = initialBalance;
-
-            //Opened?.Invoke(this, new AccountStateHandler(date: DateTime.Now, notes: "open", whoChangedIt: "консультан", amount: initialBalance));
         }
 
         public Account()
@@ -63,11 +55,6 @@ namespace BankLibrary.Models
         /// Операция с денежными средствами в конце каждого месяца
         /// </summary>
         public virtual void PerformMonthEndTransactions() { }
-
-        /// <summary>
-        /// Событие возникающее при открытии счета
-        /// </summary>
-        //protected internal event EventHandler<AccountStateHandler> Opened;
 
         #region PropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

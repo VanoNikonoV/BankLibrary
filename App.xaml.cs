@@ -26,10 +26,10 @@ namespace Bank
             
             base.OnStartup(e);
 
-            string path = Directory.GetCurrentDirectory() + @"\Data\ClientsBank.json";
+            //string path = Directory.GetCurrentDirectory() + @"\Data\ClientsBank.json";
 
             //Проверка исключения
-            //string path = null; 
+            string path = null; 
 
             MainWindow window = new MainWindow();
 
