@@ -403,7 +403,15 @@ namespace Bank.ViewModels
                 {
                     case "Deposit":
 
-                        Client.AddAccount(AccountType.Deposit, 100);
+                        try
+                        {
+                            Client.AddAccount(AccountType.Deposit, 100);
+                        }
+                        catch (AccountException e) 
+                        {
+                            MessageBox.Show(e.Message);
+                        }
+                        
 
                         OnEditClient?.Invoke(new InformationAboutChanges(DateTime.Now, this.GetType().Name,
                         $"Открытие депозитного счета {Client.Owner.FirstName} {Client.Owner.SecondName}", Client.Owner.ID));

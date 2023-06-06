@@ -1,7 +1,12 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 
 namespace BankLibrary.Models
 {
+
+    
+
+
     /// <summary>
     /// Базовый класс счета
     /// </summary>
@@ -31,24 +36,31 @@ namespace BankLibrary.Models
         /// <summary>
         /// Номер счета
         /// </summary>
-        private static int accountNumberSeed = 0;
+        private static int accountNumberSeed = 123000;
 
         /// <summary>
         /// Конструтор Account 
         /// </summary>
         /// <param name="initialBalance">Начальный баланс при открытии счета</param>
-        public Account(decimal initialBalance)
+        public Account(decimal initialBalance):this()
         {
-            this.Number = accountNumberSeed.ToString();
-            accountNumberSeed++;
-
             Balance = initialBalance;
         }
 
         public Account()
         {
             this.Number = accountNumberSeed.ToString();
-            accountNumberSeed++;
+
+            // accountNumberSeed++;
+
+            if (accountNumberSeed > 123200) 
+            { 
+                throw new AccountException($"Номер счета превысил допустимый диапозон! Значение {accountNumberSeed}"); 
+            }
+
+            else accountNumberSeed++;
+
+            Debug.Write("\n" + this.Number);
         }
 
         /// <summary>

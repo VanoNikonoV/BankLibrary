@@ -37,11 +37,11 @@ namespace BankLibrary.DataAccesses
 
                     BankClient<Account> tempClient = new BankClient<Account>
                                     (new Client(firstName: client.Owner.FirstName,
-                                                middleName: client.Owner.MiddleName,
-                                                secondName: client.Owner.SecondName,
-                                                    telefon: client.Owner.Telefon,
-                                    seriesAndPassportNumber: client.Owner.SeriesAndPassportNumber,
-                                                    dateTime: client.Owner.DateOfEntry));
+                                               middleName: client.Owner.MiddleName,
+                                               secondName: client.Owner.SecondName,
+                                                  telefon: client.Owner.Telefon,
+                                  seriesAndPassportNumber: client.Owner.SeriesAndPassportNumber,
+                                                 dateTime: client.Owner.DateOfEntry));
 
                     tempClient.AddAccount(AccountType.Deposit, client.Deposit.Balance);
 
@@ -68,40 +68,39 @@ namespace BankLibrary.DataAccesses
                     {
                         string fileName = openDlg.FileName;
 
-                       
-                            string json = File.ReadAllText(fileName);
+                        string json = File.ReadAllText(fileName);
 
-                            List<BankClient<Account>> temp = JsonConvert.DeserializeObject<List<BankClient<Account>>>(json);
+                        List<BankClient<Account>> temp = JsonConvert.DeserializeObject<List<BankClient<Account>>>(json);
 
-                            if (temp != null)
+                        if (temp != null)
+                        {
+                            foreach (BankClient<Account> client in temp) //NullReferenceException
                             {
-                                foreach (BankClient<Account> client in temp) //NullReferenceException
-                                {
-                                    BankClient<Account> tempClient = new BankClient<Account>
-                                                    (new Client(firstName: client.Owner.FirstName,
-                                                                middleName: client.Owner.MiddleName,
-                                                                secondName: client.Owner.SecondName,
-                                                                    telefon: client.Owner.Telefon,
-                                                    seriesAndPassportNumber: client.Owner.SeriesAndPassportNumber,
-                                                                    dateTime: client.Owner.DateOfEntry));
+                                BankClient<Account> tempClient = new BankClient<Account>
+                                                (new Client(firstName: client.Owner.FirstName,
+                                                            middleName: client.Owner.MiddleName,
+                                                            secondName: client.Owner.SecondName,
+                                                                telefon: client.Owner.Telefon,
+                                                seriesAndPassportNumber: client.Owner.SeriesAndPassportNumber,
+                                                                dateTime: client.Owner.DateOfEntry));
 
-                                    tempClient.AddAccount(AccountType.Deposit, client.Deposit.Balance);
+                                tempClient.AddAccount(AccountType.Deposit, client.Deposit.Balance);
 
-                                    tempClient.AddAccount(AccountType.NoDeposit, client.NoDeposit.Balance);
+                                tempClient.AddAccount(AccountType.NoDeposit, client.NoDeposit.Balance);
 
-                                    this.Add(tempClient);
-                                }
+                                this.Add(tempClient);
                             }
-                            else
-                            {
-                                path = Environment.CurrentDirectory + @"\Data\Default.json";
+                        }
+                        else
+                        {
+                            path = Environment.CurrentDirectory + @"\Data\Default.json";
 
-                                File.Create(path).Close();
+                            File.Create(path).Close();
 
-                                MessageBox.Show("Создан файл Default.json\n" + path, caption: "Не удалось открыть файл", 
-                                    MessageBoxButton.OK, MessageBoxImage.Information);
-                            }
-     
+                            MessageBox.Show("Создан файл Default.json\n" + path, 
+                                caption: "Не удалось открыть файл", 
+                                MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
                     }
                 }
             }

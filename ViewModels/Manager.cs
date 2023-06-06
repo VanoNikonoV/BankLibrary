@@ -105,7 +105,7 @@ namespace Bank.ViewModels
 
             bool equal = newMiddleName.Equals(current);
 
-            if ( ValidateCustomer(Client.Owner, "MiddleName") && !equal)
+            if (ValidateCustomer(Client.Owner, "MiddleName") && !equal)
             {
                 BankClient<Account> client = BankClients.Find(i => i.Owner.ID == Client.Owner.ID);
 

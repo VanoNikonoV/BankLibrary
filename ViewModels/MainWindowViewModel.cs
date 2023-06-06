@@ -41,7 +41,7 @@ namespace Bank.ViewModels
         #region Поля
         private readonly string[] employeesTypeOptions;
 
-        readonly string PATH = Directory.GetCurrentDirectory() + @"\Data\Log.json";
+        readonly string pathLog = Directory.GetCurrentDirectory() + @"\Data\Log.json";
 
         private string employeeType;
 
@@ -241,14 +241,14 @@ namespace Bank.ViewModels
                 }
                 else
                 {
-                    string path = Directory.GetCurrentDirectory() + @"\Images\A_logo.png";
+                    string pathImage = Directory.GetCurrentDirectory() + @"\Images\A_logo.png";
 
                     new ToastContentBuilder()
                         .AddArgument("visual", "viewConversation")
                         .AddArgument("conversationId", 9813)
                         .AddText("Ощибка в данных")
                         .AddText($"Клиент с такими данными уже существует")
-                        .AddAppLogoOverride(new Uri(path), ToastGenericAppLogoCrop.Circle)
+                        .AddAppLogoOverride(new Uri(pathImage), ToastGenericAppLogoCrop.Circle)
                         .Show(toast =>
                         {
                             toast.ExpirationTime = DateTime.Now.AddMilliseconds(1000);
@@ -311,7 +311,7 @@ namespace Bank.ViewModels
 
             string json2 = JsonConvert.SerializeObject(BankRepository.LogClient, Formatting.Indented);
 
-            File.WriteAllText(PATH, json2);
+            File.WriteAllText(pathLog, json2);
         }
 
         #region Закрытие модели?
